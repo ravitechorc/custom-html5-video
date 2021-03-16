@@ -3,7 +3,7 @@
    ========================================================================== */
 
 :root {
-  --youtube-red: #FE0900;
+  --youtube-red: #FFFFFF;
 }
 
 html {
@@ -31,16 +31,23 @@ body {
 }
 
 .video-container {
+  background: #000;
+  border: 1px solid;
+  overflow: hidden;
   width: 800px;
+  height: 500px;
   border-radius: 4px;
   margin: 0 auto;
   position: relative;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   justify-content: center;
 }
 
 video {
+  object-fit: fill;
+  cursor: move;
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 4px;
@@ -290,8 +297,8 @@ input[type=range].volume::-moz-range-thumb {
 }
 
 svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: #fff;
   stroke: #fff;
   cursor: pointer;

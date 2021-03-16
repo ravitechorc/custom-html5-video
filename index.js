@@ -54,6 +54,7 @@ function updatePlayButton() {
 // formatTime takes a time length in seconds and returns the time in
 // minutes and seconds
 function formatTime(timeInSeconds) {
+  timeInSeconds = timeInSeconds && isFinite(timeInSeconds) ? timeInSeconds : 0;
   const result = new Date(timeInSeconds * 1000).toISOString().substr(11, 8);
 
   return {
@@ -94,7 +95,7 @@ function updateProgress() {
 function updateSeekTooltip(event) {
   const skipTo = Math.round(
     (event.offsetX / event.target.clientWidth) *
-      parseInt(event.target.getAttribute('max'), 10)
+    parseInt(event.target.getAttribute('max'), 10)
   );
   seek.setAttribute('data-seek', skipTo);
   const t = formatTime(skipTo);
@@ -106,9 +107,10 @@ function updateSeekTooltip(event) {
 // skipAhead jumps to a different point in the video when the progress bar
 // is clicked
 function skipAhead(event) {
-  const skipTo = event.target.dataset.seek
+  let skipTo = event.target.dataset.seek
     ? event.target.dataset.seek
     : event.target.value;
+  skipTo = skipTo && isFinite(skipTo) ? skipTo : 0;
   video.currentTime = skipTo;
   progressBar.value = skipTo;
   seek.value = skipTo;
@@ -155,6 +157,7 @@ function toggleMute() {
   } else {
     volume.value = volume.dataset.volume;
   }
+  console.log(pipButton)
 }
 
 // animatePlayback displays an animation when
@@ -277,6 +280,8 @@ video.addEventListener('click', togglePlay);
 video.addEventListener('click', animatePlayback);
 video.addEventListener('mouseenter', showControls);
 video.addEventListener('mouseleave', hideControls);
+videoContainer.addEventListener('mouseenter', showControls);
+videoContainer.addEventListener('mouseleave', hideControls);
 videoControls.addEventListener('mouseenter', showControls);
 videoControls.addEventListener('mouseleave', hideControls);
 seek.addEventListener('mousemove', updateSeekTooltip);
@@ -285,7 +290,7 @@ volume.addEventListener('input', updateVolume);
 volumeButton.addEventListener('click', toggleMute);
 fullscreenButton.addEventListener('click', toggleFullScreen);
 videoContainer.addEventListener('fullscreenchange', updateFullscreenButton);
-pipButton.addEventListener('click', togglePip);
+// pipButton.addEventListener('click', togglePip);
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!('pictureInPictureEnabled' in document)) {
