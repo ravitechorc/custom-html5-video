@@ -157,7 +157,6 @@ function toggleMute() {
   } else {
     volume.value = volume.dataset.volume;
   }
-  console.log(pipButton)
 }
 
 // animatePlayback displays an animation when
@@ -298,3 +297,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 document.addEventListener('keyup', keyboardShortcuts);
+
+function moveVideo(videoId, direction) {
+  let videoElement = document.getElementById(videoId);
+
+  let offsetWidth = videoElement.offsetWidth;
+  let offsetLeft = videoElement.offsetLeft;
+  let offsetHeight = videoElement.offsetHeight;
+  let offsetTop = videoElement.offsetTop;
+
+  let left, distance;
+
+  switch (direction) {
+    case 'right':
+      left = (offsetLeft - (offsetWidth * 0.10));
+      distance = offsetLeft + left;
+
+      if (distance > -videoElement.clientWidth && (videoElement.parentElement.clientWidth < offsetWidth)) {
+        videoElement.style.left = left + 'px';
+      }
+      break;
+    case 'left':
+      left = (offsetLeft + (offsetWidth * 0.10));
+      if (left < 0) {
+        videoElement.style.left = left + 'px';
+      }
+      break;
+    case 'bottom':
+      left = (offsetTop - (offsetHeight * 0.10));
+      distance = offsetTop + left;
+
+      if (distance > -videoElement.clientHeight && (videoElement.parentElement.clientHeight < offsetHeight)) {
+        videoElement.style.top = left + 'px';
+      }
+      break;
+    case 'top':
+      left = (offsetTop + (offsetHeight * 0.10));
+      if (left < 0) {
+        videoElement.style.top = left + 'px';
+      }
+      break;
+  }
+
+}

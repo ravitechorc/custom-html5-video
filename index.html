@@ -58,6 +58,26 @@
                 <use href="#pip"></use>
               </svg>
             </button> -->
+            <button data-title="MOVE LEFT" class="pip-button" id="move-left" onclick="moveVideo('video', 'left')">
+              <svg>
+                <use href="#arrow-left"></use>
+              </svg>
+            </button>
+            <button data-title="MOVE RIGHT" class="pip-button" id="move-right" onclick="moveVideo('video', 'right')">
+              <svg>
+                <use href="#arrow-right"></use>
+              </svg>
+            </button>
+            <button data-title="MOVE TOP" class="pip-button" id="move-right" onclick="moveVideo('video', 'top')">
+              <svg>
+                <use href="#arrow-up"></use>
+              </svg>
+            </button>
+            <button data-title="MOVE BOTTOM" class="pip-button" id="move-right" onclick="moveVideo('video', 'bottom')">
+              <svg>
+                <use href="#arrow-down"></use>
+              </svg>
+            </button>
             <button data-title="ZOOM RESET" class="pip-button" id="zoomreset-button">
               <svg>
                 <use href="#zoomreset"></use>
@@ -87,6 +107,25 @@
 
   <svg style="display: none">
     <defs>
+      <symbol id="arrow-up" viewBox="0 0 24 24">
+        <path
+              d="M17.6569 8.96207L16.2394 10.373L12.9845 7.10273L12.9708 20.7078L10.9708 20.7058L10.9844 7.13793L7.75416 10.3531L6.34326 8.93559L12.0133 3.29199L17.6569 8.96207Z" />
+      </symbol>
+      <symbol id="arrow-down" viewBox="0 0 24 24">
+        <path
+              d="M23.7118,15.7021 C24.1,15.3092 24.0962,14.6761 23.7034,14.2879 C23.3105,13.8997 22.6774,13.9035 22.2892,14.2963 L15.0005,21.6726 L15.0005,3.99725 C15.0005,3.44497 14.5528,2.99725 14.0005,2.99725 C13.4482,2.99725 13.0005,3.44497 13.0005,3.99725 L13.0005,21.6703 L5.71406,14.2963 C5.32588,13.9035 4.69272,13.8997 4.29987,14.2879 C3.90703,14.6761 3.90325,15.3092 4.29143,15.7021 L13.1125,24.6291 C13.6018,25.1243 14.4014,25.1243 14.8908,24.6291 L23.7118,15.7021 Z">
+        </path>
+      </symbol>
+      <symbol id="arrow-left" viewBox="0 0 24 24">
+        <path id="Shape"
+              d="M4.22,9.28l-4-4L.207,5.267.2,5.261.194,5.254.187,5.246.182,5.24.174,5.231l0,0-.008-.01,0,0L.151,5.2l0,0L.14,5.186l0,0L.13,5.172l0,0L.12,5.157l0-.006L.111,5.142l0-.007,0-.008L.1,5.118l0-.006L.087,5.1l0,0A.751.751,0,0,1,.235,4.2L4.22.22A.75.75,0,0,1,5.28,1.281L2.561,4H14.75a.75.75,0,0,1,0,1.5H2.561L5.28,8.22A.75.75,0,1,1,4.22,9.28Z"
+              transform="translate(4.25 7.25)" />
+      </symbol>
+      <symbol id="arrow-right" viewBox="0 0 24 24">
+        <path
+              d="M15.7048,4.28868 C15.312,3.9005 14.6788,3.90428 14.2906,4.29713 C13.9025,4.68998 13.9062,5.32313 14.2991,5.71132 L21.6753,13.0000008 L4,13.0000008 C3.44772,13.0000008 3,13.4477 3,14.0000008 C3,14.5523 3.44772,15.0000008 4,15.0000008 L21.673,15.0000008 L14.2991,22.2864 C13.9062,22.6746 13.9025,23.3078 14.2906,23.7006 C14.6788,24.0935 15.312,24.0972 15.7048,23.7091 L24.6318,14.888 C25.127,14.3987 25.127,13.5991 24.6318,13.1097 L15.7048,4.28868 Z">
+        </path>
+      </symbol>
       <symbol id="pause" viewBox="0 0 24 24">
         <path d="M14.016 5.016h3.984v13.969h-3.984v-13.969zM6 18.984v-13.969h3.984v13.969h-3.984z"></path>
       </symbol>
