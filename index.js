@@ -298,9 +298,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('keyup', keyboardShortcuts);
 
-function moveVideo(videoId, direction) {
+function moveVideo(videoId, direction, isptz) {
   let videoElement = document.getElementById(videoId);
-
+  if (!isptz) {
+    videoElement.style.width = '200%';
+    videoElement.style.height = '200%';
+  }
   let offsetWidth = videoElement.offsetWidth;
   let offsetLeft = videoElement.offsetLeft;
   let offsetHeight = videoElement.offsetHeight;

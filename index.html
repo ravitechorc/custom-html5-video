@@ -219,7 +219,8 @@
       y_cursor = 0,
       x_img_ele = 0,
       y_img_ele = 0,
-      zoomlevel = 0;
+      zoomlevel = 0,
+      isptzenabled = false;
 
     function zoom(zoomincrement, count) {
       if (zoomlevel < 10 && count > 0) {
@@ -243,12 +244,21 @@
 
       }
     }
-
+    function reset_ptz() {
+      let videoElement = document.getElementById('video');
+      if (isptzenabled) {
+        videoElement.style.width = '100%';
+        videoElement.style.height = '100%';
+        isptzenabled = false;
+      }
+    }
     document.getElementById('zoomout-button').addEventListener('click', function () {
+      reset_ptz();
       zoom(1.1, -2);
       changeZoomTitle();
     });
     document.getElementById('zoomin-button').addEventListener('click', function () {
+      reset_ptz();
       zoom(1.1, 2);
       changeZoomTitle();
     });
@@ -260,6 +270,8 @@
       img_ele.style.top = '0px';
       img_ele = null;
       zoomlevel = 0;
+      isptzenabled = false;
+      changeZoomTitle();
     });
 
 
