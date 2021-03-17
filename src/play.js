@@ -3,7 +3,7 @@ import WowzaWebRTCPlay from './WowzaWebRTCPlay.js';
 let settings = {
   sdpURL: "wss://s2.sstlive.com/webrtc-session.json",
   applicationName: "live",
-  streamName: "SST000821"
+  streamName: "SST024244"
 }
 
 const init = () => {

@@ -162,21 +162,21 @@ function toggleMute() {
 // animatePlayback displays an animation when
 // the video is played or paused
 function animatePlayback() {
-  playbackAnimation.animate(
-    [
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-      },
-      {
-        opacity: 0,
-        transform: 'scale(1.3)',
-      },
-    ],
-    {
-      duration: 500,
-    }
-  );
+  // playbackAnimation.animate(
+  //   [
+  //     {
+  //       opacity: 1,
+  //       transform: 'scale(1)',
+  //     },
+  //     {
+  //       opacity: 0,
+  //       transform: 'scale(1.3)',
+  //     },
+  //   ],
+  //   {
+  //     duration: 500,
+  //   }
+  // );
 }
 
 // toggleFullScreen toggles the full screen state of the video
