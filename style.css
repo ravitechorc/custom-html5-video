@@ -64,14 +64,14 @@ video {
 }
 
 .video-controls.hide {
-  opacity: 0;
+  /* opacity: 0; */
   pointer-events: none;
 }
 
 .video-progress {
   position: relative;
   height: 8.4px;
-  margin-bottom: 10px;
+margin-bottom: 15px;
 }
 
 progress {
@@ -158,7 +158,7 @@ progress::-moz-progress-bar {
 button {
   cursor: pointer;
   position: relative;
-  margin-right: 7px;
+  margin-right: 15px;
   font-size: 12px;
   padding: 3px;
   border: none;
@@ -303,3 +303,70 @@ svg {
   stroke: #fff;
   cursor: pointer;
 }
+/* arrow buttons  */
+  .right-controls {
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-layout {
+      height: 25px;
+      width: 25px;
+      position: relative; 
+      margin-right: 15px;
+      padding: 3px;
+      top:-2px;
+    }
+    .arrow-layout .fas{
+      font-size:13px;
+    } 
+ .right-arrow svg{
+  height:12px  !important;
+  width:12px  !important;
+}
+.bottom-arrow svg{
+      height: 14px !important;
+    width: 12px !important;
+}
+.left-arrow svg{
+  height: 18px !important;
+    width: 21px !important;
+}
+.top-arrow svg{
+      height: 23px !important;
+    width: 15px !important;
+}
+.left-arrow, .right-arrow, .top-arrow, .bottom-arrow{
+      position: absolute;
+        margin-right: 0;
+      padding: 0;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+}  
+    .left-arrow {
+      left: -4px;
+      top:25%;
+    }
+
+    .right-arrow {
+     right: -3px;
+    top: 27%;
+    }
+
+    .top-arrow {
+      top: -5px;
+      left:25%;
+    }
+
+    .bottom-arrow {
+bottom: -5px;
+    left: 29%;
+    }
+
+    .fas{
+      color:#fff;
+      font-size:22px;
+    }
+
+  

@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Custom HTML5 Video Player</title>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
   <script type="text/javascript" src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script>
 </head>
 
@@ -58,47 +60,63 @@
                 <use href="#pip"></use>
               </svg>
             </button> -->
-            <button data-title="MOVE LEFT" class="pip-button" id="move-left" onclick="moveVideo('video', 'left')">
-              <svg>
-                <use href="#arrow-left"></use>
-              </svg>
-            </button>
-            <button data-title="MOVE RIGHT" class="pip-button" id="move-right" onclick="moveVideo('video', 'right')">
-              <svg>
-                <use href="#arrow-right"></use>
-              </svg>
-            </button>
-            <button data-title="MOVE TOP" class="pip-button" id="move-right" onclick="moveVideo('video', 'top')">
-              <svg>
-                <use href="#arrow-up"></use>
-              </svg>
-            </button>
-            <button data-title="MOVE BOTTOM" class="pip-button" id="move-right" onclick="moveVideo('video', 'bottom')">
-              <svg>
-                <use href="#arrow-down"></use>
-              </svg>
-            </button>
-            <button data-title="ZOOM RESET" class="pip-button" id="zoomreset-button">
-              <svg>
-                <use href="#zoomreset"></use>
-              </svg>
-            </button>
-            <button data-title="ZOOM OUT" class="pip-button" id="zoomout-button">
-              <svg>
-                <use href="#zoomout"></use>
-              </svg>
-            </button>
-            <button data-title="ZOOM IN" class="pip-button" id="zoomin-button">
-              <svg>
-                <use href="#zoomin"></use>
-              </svg>
-            </button>
-            <button data-title="Full screen (f)" class="fullscreen-button" id="fullscreen-button">
-              <svg>
-                <use href="#fullscreen"></use>
-                <use href="#fullscreen-exit" class="hidden"></use>
-              </svg>
-            </button>
+            <div class="arrow-layout">
+              <button data-title="MOVE LEFT" class="pip-button left-arrow" id="move-left"
+                      onclick="moveVideo('video', 'left')">
+                <!-- <svg>
+                  <use href="#arrow-left"></use>
+                </svg> -->
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <button data-title="MOVE RIGHT" class="pip-button right-arrow" id="move-right"
+                      onclick="moveVideo('video', 'right')">
+                <!-- <svg>
+                  <use href="#arrow-right"></use>
+                </svg> -->
+                <i class="fas fa-arrow-right"></i>
+              </button>
+              <button data-title="MOVE TOP" class="pip-button top-arrow" id="move-right"
+                      onclick="moveVideo('video', 'top')">
+                <!-- <svg>
+                  <use href="#arrow-up"></use>
+                </svg> -->
+                <i class="fas fa-arrow-up"></i>
+              </button>
+              <button data-title="MOVE BOTTOM" class="pip-button bottom-arrow" id="move-right"
+                      onclick="moveVideo('video', 'bottom')">
+                <!-- <svg>
+                  <use href="#arrow-down"></use>
+                </svg> -->
+                <i class="fas fa-arrow-down"></i>
+              </button>
+            </div>
+            <div>
+              <button data-title="ZOOM RESET" class="pip-button" id="zoomreset-button">
+                <!-- <svg>
+                  <use href="#zoomreset"></use>
+                </svg> -->
+                <i class="fas fa-redo"></i>
+              </button>
+              <button data-title="ZOOM OUT" class="pip-button" id="zoomout-button">
+                <!-- <svg>
+                  <use href="#zoomout"></use>
+                </svg> -->
+                <i class="fas fa-search-minus"></i>
+              </button>
+              <button data-title="ZOOM IN" class="pip-button" id="zoomin-button">
+                <!-- <svg>
+                  <use href="#zoomin"></use>
+                </svg> -->
+                <i class="fas fa-search-plus"></i>
+              </button>
+              <button data-title="Full screen (f)" class="fullscreen-button" id="fullscreen-button">
+                <i class="fas fa-expand"></i>
+                <!-- <svg>
+                  <use href="#fullscreen"></use>
+                  <use href="#fullscreen-exit" class="hidden"></use>
+                </svg> -->
+              </button>
+            </div>
           </div>
         </div>
       </div>
